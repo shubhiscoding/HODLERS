@@ -9,10 +9,17 @@ import ReceiveFunds from './components/ReceiveFunds';
 import './App.css';
 const App = () => {
   const [address, setAddress] = useState("");
-
+  const [privateKey, setPrivateKey] = useState(""); // Add privateKey state
+  if(localStorage.getItem('privateKey') && (!privateKey || privateKey.length<=0)){
+    setPrivateKey(localStorage.getItem('privateKey'));
+  }
+  let wallet;
+  if(privateKey && privateKey.length>0 && window.location.pathname === '/'){
+    wallet = new Wallet(privateKey);
+    window.location.href = "/wallet-display";
+  }
   const handleCreateWallet = (newAddress) => {
-    const privateKey = localStorage.getItem('privateKey');
-    const wallet = new Wallet(privateKey);
+    setPrivateKey(localStorage.getItem('privateKey'));
     setAddress(wallet.address);
   };
 
@@ -26,6 +33,12 @@ const App = () => {
     <Router>
       <div className="wallet-container">
         <h1>HODLERS</h1>
+        {privateKey && privateKey.length>0 &&
+        <button id='logout' onClick={() => {
+          localStorage.removeItem('privateKey');
+          window.location.href = '/';
+        }}>Log Out</button>
+        }
         <Routes>
           <Route path="/" element={!address ? (
             <div className="initial-actions">

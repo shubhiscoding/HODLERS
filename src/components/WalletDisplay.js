@@ -77,31 +77,31 @@ const WalletDisplay = ({ address }) => {
       </select>
       <p>{Address}</p>
       {isLoading ? (
-        <p>Loading...</p>
+        <p id="loading">Loading...</p>
       ) : (
         <>
-          <h1>
+          <h1 id="balance">
             {Balance && Balance.toString()} {Symbol}
           </h1>
-          <div className="buttons">
-            <button
-              onClick={() => {
-                window.location.href = "/send-funds";
-              }}
-            >
-              Send Funds
-            </button>
-            <button
-              id="receivebtn"
-              onClick={() => {
-                window.location.href = "/receive-funds";
-              }}
-            >
-              Receive Funds
-            </button>
-          </div>
         </>
       )}
+      <div className="buttons">
+        <button
+          onClick={() => {
+            window.location.href = "/send-funds";
+          }}
+        >
+          Send Funds
+        </button>
+        <button
+          id="receivebtn"
+          onClick={() => {
+            window.location.href = "/receive-funds";
+          }}
+        >
+          Receive Funds
+        </button>
+      </div>
     </div>
   );
 };

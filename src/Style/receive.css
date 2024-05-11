@@ -1,0 +1,89 @@
+.receive{
+    position: relative;
+      display: flex;
+      width: 35vw;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      border-radius: 8px;
+      background-color: #1b212c;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      color: white;
+  }
+
+.receive .backButtonrec {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #2d303d;
+    color: white;
+    border: 1px solid #333333;
+    width: 40px; /* Set the width and height for a perfect circle */
+    height: 40px; /* Adjust as needed */
+    line-height: 44px; /* Center the icon vertically */
+    text-align: center; /* Center the icon horizontally */
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  
+  .receive .backButtonrec:hover {
+    background-color: white; 
+    color:black;
+  }
+
+  
+  .receive .backButtonrec svg {
+    scale: 1.4;
+  }
+
+  .receive a {
+    background-color: black; 
+    padding: 0.1rem 0.5rem; 
+    border-radius: 4px;
+}
+
+/* .receive label {
+    padding: 0.2rem 0.4rem;
+    background-color: #2d303d; 
+    border-radius: 4px; 
+  } */
+  
+  .receive select {
+    /* Inherit font-size, padding, border, and radius from .displayWallet.select */
+    margin-bottom: 1rem; /* Maintain space after select */
+  }
+  
+  .receive input {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    width: 30vw; /* Stretch input to fill container */
+  }
+  
+  .receive button {
+    /* Inherit properties from .displayWallet.button */
+    background-color: #2d303d; /* Adjust background color from reference */
+  }
+  
+  .receive button:hover {
+    /* Inherit hover style from .displayWallet.button */
+  }
+  
+  .qr {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    background-color: #2d303d;
+    color: white;
+  }

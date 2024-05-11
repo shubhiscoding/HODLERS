@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { ethers, utils, providers } from "ethers";
 import '../Style/send.css';
+import { Link } from 'react-router-dom';
+import { FaTimes } from 'react-icons/fa';
 
 const SendFunds = ({ address }) => {
   const [recipient, setRecipient] = useState("");
@@ -76,6 +78,11 @@ const SendFunds = ({ address }) => {
 
   return (
     <div className="SendFunds">
+      <div>
+        <Link to="/wallet-display" className="backButton">
+          <FaTimes />
+        </Link>
+      </div>
       <div className="form">
       <label htmlFor="networkSelect">Select Blockchain Network:</label>
       <select id="networkSelect" value={network} onChange={handleNetworkChange}>

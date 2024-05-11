@@ -7,6 +7,21 @@ body {
   color: white;
 }
 
+#logout {
+  cursor: pointer;
+  background-color: #1b212c;
+  color:red;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#logout:hover {
+  background-color: #f0f8ff; /* Lighter shade on hover */
+  color:black;
+}
+
 .wallet-container {
   display: flex;
   flex-direction: column;

@@ -1,5 +1,6 @@
 /* Re-use styles from displayWallet.css */
 .SendFunds{
+  position: relative;
     display: flex;
     width: 35vw;
     flex-direction: column;
@@ -13,23 +14,46 @@
     color: white;
 }
 
+
+
+.SendFunds .backButton {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #2d303d;
+  /* color: white; */
+  border: 1px solid #333333;
+  width: 40px; /* Set the width and height for a perfect circle */
+  height: 40px; /* Adjust as needed */
+  line-height: 44px; /* Center the icon vertically */
+  text-align: center; /* Center the icon horizontally */
+  /* justify-content: center; */
+  z-index: 1;
+  /* border-radius: 50%; Make the background a perfect circle */
+  /* text-decoration: none; */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.SendFunds .backButton {
+  background-color: #2d303d; /* Adjust background color from reference */
+  color:white;
+}
+
+.SendFunds .backButton:hover {
+  background-color: #f0f8ff; /* Lighter shade on hover */
+  color:black;
+}
+
+.SendFunds .backButton svg {
+  scale: 1.4; /* Adjust icon size */
+}
+
+
 .SendFunds a {
     background-color: black; /* Adjust background color from reference */
     padding: 0.1rem 0.5rem; /* Adjust padding for better fit */
     border-radius: 4px; /* Add rounded corners */
-}
-
-.receive{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    border-radius: 8px;
-    background-color: #1b212c;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    max-width: 100%; /* Optional: Set a maximum width */
-    /* margin: 0 auto; Center the component horizontally */
-    color: white;
 }
 .form{
     display: flex;

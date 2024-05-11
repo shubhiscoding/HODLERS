@@ -29,14 +29,18 @@
     font-size: 1.2rem; /* Increase paragraph font size */
     margin: 0.5rem 0; /* Adjust margins for better spacing */
   }
+  .displayWallet #loading {
+    margin-bottom: 1rem;
+  }
+  .displayWallet #balance {
+    margin-bottom: 1.5rem;
+  }
 
   .displayWallet .buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between; /* Distribute buttons evenly */
-  }
-  .displayWallet #receivebtn{
-    margin-left: 3rem;
+    gap: 3rem; /* Add some space between buttons */
   }
   
   .displayWallet button {
