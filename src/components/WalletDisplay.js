@@ -1,45 +1,56 @@
-import React, { useState, useEffect } from 'react';
-import { Wallet, providers } from 'ethers'; // Import providers from ethers
-import '../Style/display.css';
+import React, { useState, useEffect } from "react";
+import { Wallet, providers } from "ethers"; // Import providers from ethers
+import "../Style/display.css";
 
 const WalletDisplay = ({ address }) => {
-  const [currentProvider, setCurrentProvider] = useState('Ethereum');
+  const [currentProvider, setCurrentProvider] = useState("Ethereum");
   const [Address, setAddress] = useState(null);
   const [Balance, setBalance] = useState(null);
   const [Symbol, setSymbol] = useState(null);
+  const [isLoading, setIsLoading] = useState(true); // Add isLoading state
+
   useEffect(() => {
     const getAddressAndBalance = async () => {
       try {
-        const privateKey = localStorage.getItem('privateKey');
+        const privateKey = localStorage.getItem("privateKey");
         const wallet = new Wallet(privateKey);
         let decimals = 1;
         // Set the provider based on the selected blockchain network
         let provider;
-        if (currentProvider === 'Ethereum') {
+        if (currentProvider === "Ethereum") {
           provider = providers.getDefaultProvider(); // Default Ethereum provider
           decimals = 18;
-          setSymbol('ETH');
-        } else if (currentProvider === 'Binance Smart Chain') {
-          provider = new providers.JsonRpcProvider('https://bsc-dataseed.binance.org/');
+          setSymbol("ETH");
+          setIsLoading(true);
+        } else if (currentProvider === "Binance Smart Chain") {
+          provider = new providers.JsonRpcProvider(
+            "https://bsc-dataseed.binance.org/"
+          );
           decimals = 18;
-          setSymbol('BNB');
-        } else if (currentProvider === 'Sepolia ETH') {
-            provider = new providers.JsonRpcProvider('https://rpc.sepolia.ethpandaops.io');
-            decimals = 18;
-            setSymbol('ETH');
-        } else if (currentProvider === 'Meter Testnet') {
-            provider = new providers.JsonRpcProvider('https://rpctest.meter.io/');
-            decimals = 18;
-            setSymbol('MTR');
+          setSymbol("BNB");
+          setIsLoading(true);
+        } else if (currentProvider === "Sepolia ETH") {
+          provider = new providers.JsonRpcProvider(
+            "https://rpc.sepolia.ethpandaops.io"
+          );
+          decimals = 18;
+          setSymbol("ETH");
+          setIsLoading(true);
+        } else if (currentProvider === "Meter Testnet") {
+          provider = new providers.JsonRpcProvider("https://rpctest.meter.io/");
+          decimals = 18;
+          setSymbol("MTR");
+          setIsLoading(true);
         }
         // You can add more else-if conditions for other blockchain networks
         const connectedWallet = wallet.connect(provider);
         setAddress(connectedWallet.address);
-        const balance = await connectedWallet.getBalance()/10**decimals;
-        console.log('Balance:', balance);
-        setBalance((balance).toFixed(4));
+        const balance = (await connectedWallet.getBalance()) / 10 ** decimals;
+        console.log("Balance:", balance);
+        setBalance(balance.toFixed(4));
+        setIsLoading(false); // Set isLoading to false after fetching balance
       } catch (error) {
-        console.error('Error fetching Address and Balance:', error);
+        console.error("Error fetching Address and Balance:", error);
       }
     };
 
@@ -51,9 +62,13 @@ const WalletDisplay = ({ address }) => {
   };
 
   return (
-    <div className='displayWallet'>
+    <div className="displayWallet">
       <label htmlFor="providerSelect">Select Blockchain Network:</label>
-      <select id="providerSelect" value={currentProvider} onChange={handleProviderChange}>
+      <select
+        id="providerSelect"
+        value={currentProvider}
+        onChange={handleProviderChange}
+      >
         <option value="Ethereum">Ethereum</option>
         <option value="Binance Smart Chain">Binance Smart Chain</option>
         <option value="Sepolia ETH">Sepolia ETH</option>
@@ -61,15 +76,32 @@ const WalletDisplay = ({ address }) => {
         {/* Add more options for other blockchain networks */}
       </select>
       <p>{Address}</p>
-      <h1>{Balance && Balance.toString()} {Symbol}</h1>
-      <div className='buttons'>
-        <button onClick={function(){
-          window.location.href = '/send-funds';
-        }}>Send Funds</button>
-        <button id='receivebtn' onClick={function(){
-          window.location.href = '/receive-funds';
-        }}>Receive Funds</button>
-      </div>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <h1>
+            {Balance && Balance.toString()} {Symbol}
+          </h1>
+          <div className="buttons">
+            <button
+              onClick={() => {
+                window.location.href = "/send-funds";
+              }}
+            >
+              Send Funds
+            </button>
+            <button
+              id="receivebtn"
+              onClick={() => {
+                window.location.href = "/receive-funds";
+              }}
+            >
+              Receive Funds
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
