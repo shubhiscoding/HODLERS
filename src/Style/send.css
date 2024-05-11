@@ -1,0 +1,86 @@
+/* Re-use styles from displayWallet.css */
+.SendFunds{
+    display: flex;
+    width: 35vw;
+    flex-direction: column;
+    align-items: start;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #1b212c;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Optional: Set a maximum width */
+    /* margin: 0 auto; Center the component horizontally */
+    color: white;
+}
+
+.SendFunds a {
+    background-color: black; /* Adjust background color from reference */
+    padding: 0.1rem 0.5rem; /* Adjust padding for better fit */
+    border-radius: 4px; /* Add rounded corners */
+}
+
+.receive{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #1b212c;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Optional: Set a maximum width */
+    /* margin: 0 auto; Center the component horizontally */
+    color: white;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    gap: 0.3rem;
+}
+.SendFunds .btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem; /* Add some space between buttons and text */
+    color:white;
+
+}
+#networkSelect{
+    width: 15vw;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  .SendFunds label {
+    /* Inherit font-size and margin-bottom from .displayWallet.label */
+    padding: 0.2rem 0.4rem; /* Add padding for better fit */
+    background-color: #2d303d; /* Adjust background color from reference */
+    border-radius: 4px; /* Add rounded corners */
+  }
+  
+  .SendFunds select {
+    /* Inherit font-size, padding, border, and radius from .displayWallet.select */
+    margin-bottom: 1rem; /* Maintain space after select */
+  }
+  
+  .SendFunds input {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    width: 30vw; /* Stretch input to fill container */
+  }
+  
+  .SendFunds button {
+    /* Inherit properties from .displayWallet.button */
+    background-color: #2d303d; /* Adjust background color from reference */
+  }
+  
+  .SendFunds button:hover {
+    /* Inherit hover style from .displayWallet.button */
+  }
+  

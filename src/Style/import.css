@@ -1,0 +1,48 @@
+
+  
+  #importWallet label {
+    margin-bottom: 10px;
+  }
+  
+  #importWallet input {
+    width: 30vw;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #importWallet button {
+    color:white;
+    background-color: #2d303d;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  #importWallet button:hover {
+    background-color: #f0f8ff; /* Lighter shade on hover */
+    color:black;
+  }
+  
+  #importWallet p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+#importWallet {
+  display: flex;
+  width: 35vw;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: #1b212c;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 200%; /* Optional: Set a maximum width */
+  /* margin: 0 auto; Center the component horizontally */
+  color:white;
+}

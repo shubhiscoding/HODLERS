@@ -1,0 +1,77 @@
+/* CreateWallet component styles */
+#createWallet {
+  display: flex;
+  width: 35vw;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: #1b212c;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 100%; /* Optional: Set a maximum width */
+  margin: 0 auto; /* Center the component horizontally */
+  color:white;
+}
+
+#buttons {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute buttons evenly */
+  width: 100%;
+  margin-bottom: 1rem; /* Add some space between buttons and text */
+  color:white;
+}
+
+#importbtn{
+  margin-top: 1rem;
+}
+
+button {
+  color:white;
+  background-color: #2d303d;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #f0f8ff; /* Lighter shade on hover */
+  color:black;
+}
+
+#texts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center; /* Center text within the container */
+}
+
+#texts p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+#seed{
+  font-family: monospace;
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  cursor: pointer;
+  
+  /* Additional styles for the seed phrase */
+  font-size: 0.875rem; /* Adjust font size if needed */
+  color: #333; /* Darker text for better contrast */
+  border: 1px solid #ddd; /* Optional: Add a subtle border */
+  display: inline-block; /* Allow inline display for potential wrapping */
+  white-space: pre-wrap; /* Preserve whitespace within the seed phrase */
+  
+  /* Security considerations (optional) */
+  user-select: none; 
+}
